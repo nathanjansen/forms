@@ -627,6 +627,27 @@ class EditPost extends Component implements Forms\Contracts\HasForms
 }
 ```
 
+To render the form use the name of the form
+
+```blade
+<form wire:submit.prevent="savePost">
+    {{ $this->postForm }}
+    
+    <button type="submit">
+        Save post
+    </button>
+</form>
+
+
+<form wire:submit.prevent="saveAuthor">
+    {{ $this->authorForm }}
+    
+    <button type="submit">
+        Save author
+    </button>
+</form>
+```
+
 ## Scoping form data to an array property
 
 You may scope the entire form data to a single array property on your Livewire component. This will allow you to avoid having to define a new property for each field:
